@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root{
+  /*#DAA520*/
+  /*#D4AF37*/
+  /*#a78049*/
+  --primary-color: #FFD700;
+  --secondary-color: #4b4b4b;
+  --shadow-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}

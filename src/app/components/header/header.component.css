@@ -1,0 +1,31 @@
+header {
+  background-color: var(--secondary-color);
+  height: 110px;
+  position: relative;
+}
+header::before {
+  position: absolute;
+  content: '';
+  bottom:-2px;
+  right: 0;
+  width:500px;
+  height:2px;
+  color: var(--shadow-color);
+  z-index: 2;
+}
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 2rem ;
+}
+
+.header-container > div.img-container {
+  width: 100px;
+  /*height:*/
+}
+
+.header-container > div.img-container > img{
+  width: 100px;
+}
