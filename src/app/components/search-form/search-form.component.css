@@ -7,6 +7,7 @@ form > div> input {
   border: none;
   border-bottom: 2px solid var(--primary-color);
   background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 
@@ -18,5 +19,5 @@ form > button{
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 5px 10px solid var(--shadow-color);
-  padding: 0.2rem;
+  padding: 0.4rem;
 }

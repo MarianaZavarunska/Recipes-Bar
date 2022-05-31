@@ -1,4 +1,19 @@
-<main class="recipes-container">
-  <app-recipe *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe>
+<main class="main-container">
+  <div class="row">
+    <div class="col-xs-12 col-12 ">
+      <pagination
+                  [totalItems]="recipes.length-1"
+                  [itemsPerPage] = '12'
+                  [(ngModel)]="currentPage"
+                  (pageChanged)="pageChanged($event)">
+       class="pagination-container"
+      </pagination>
+    </div>
+  </div>
+
+  <div class="recipes-container">
+    <app-recipe *ngFor="let recipe of recipesToRender" [recipe]="recipe"></app-recipe>
+  </div>
+
 </main>
 

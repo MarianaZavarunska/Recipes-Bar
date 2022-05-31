@@ -1,0 +1,31 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-color);
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+
+  border-top: 2px solid var(--shadow-color);
+}
+
+footer > div:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+footer > div:nth-of-type(2) > p {
+  padding: 0 0.5rem;
+}
+
+footer > div:nth-of-type(2) > p:first-of-type{
+  border-right: 2px solid var(--shadow-color);
+}
+
+.social-icons {
+  margin-right: 1rem;
+}
+.social-icons > i-bs {
+  padding: 1rem;
+}

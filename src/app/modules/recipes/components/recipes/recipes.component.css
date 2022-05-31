@@ -1,7 +1,22 @@
-main.recipes-container{
+.main-container{
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--primary-color);
+}
+
+.main-container > div:first-of-type{
+  align-self: center;
+  justify-self: center;
+  margin-top: 1rem;
+}
+
+div.recipes-container{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin: 4rem 0;
+  margin: 3rem 0;
 }
+
+
+
