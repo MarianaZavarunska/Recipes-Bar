@@ -4,7 +4,7 @@
   /*#DAA520*/
   /*#D4AF37*/
   /*#a78049*/
-  --primary-color: #FFD700;
+  --primary-color:  #DAA520;
   --secondary-color: #4b4b4b;
   --shadow-color: black;
 }
@@ -14,6 +14,7 @@
 }
 
 body{
+  background-color: var(--secondary-color);
   padding: 0;
-  margin: 0;
+  margin: 0 5rem;
 }

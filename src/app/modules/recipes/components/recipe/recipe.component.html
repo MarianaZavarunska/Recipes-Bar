@@ -1,4 +1,11 @@
-<div *ngIf="recipe">
-  <img src="{{recipe.image_url}}" alt={{recipe.title}}/>
-  {{recipe.title}}
+<div *ngIf="recipe" class="recipe-container">
+  <div>
+    <img src="{{recipe.image_url}}" alt={{recipe.title}}/>
+  </div>
+  <div class="title-container">
+    {{recipe.title}}
+  </div>
+  <div>
+   {{recipe.publisher}}
+  </div>
 </div>
