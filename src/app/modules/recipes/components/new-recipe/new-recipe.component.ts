@@ -34,7 +34,8 @@ export class NewRecipeComponent implements OnInit {
     });
   }
   uploadToStorage():void{
-    this.dataService.uploadStorage.next(this.form.value);
+    // this.dataService.uploadStorage.next(this.form.value);
+    console.log(this.form.value)
     // this.form.reset();
   }
 

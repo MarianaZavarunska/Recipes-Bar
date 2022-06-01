@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  gap:1rem;
+}
+
+.form-container > .upload-column > div >  input{
+  width: 300px;
+}
+
+form > div.upload-btn-container{
+  align-self: center;
+  justify-self: center;
+}
+

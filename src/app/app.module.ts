@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ModalComponent } from './components/modal/modal.component';
 import { CreateFormComponent } from './components/create-form/create-form.component';
+import {RecipesModule} from "./modules/recipes/recipes.module";
 
 
 const icons = {
@@ -30,13 +31,14 @@ const icons = {
     ModalComponent,
     CreateFormComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    NgxBootstrapIconsModule.pick(icons),
-    ModalModule.forRoot()
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        NgxBootstrapIconsModule.pick(icons),
+        ModalModule.forRoot(),
+        RecipesModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

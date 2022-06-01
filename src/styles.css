@@ -19,6 +19,8 @@ body{
   margin: 0 5rem;
 }
 
+/*Pagination*/
+
 .main-container .pagination * {
   background-color: var(--secondary-color);
   color: var(--primary-color);
@@ -38,4 +40,23 @@ body{
 .page-item:first-child .page-link {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+ /*Modal */
+.modal-title {
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+.modal-content  {
+  width: 650px;
+}
+
+button.upload-btn {
+  background-color: var(--primary-color);
+  color: var(--shadow-color);
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: .5rem;
+  margin: .3rem;
 }
