@@ -6,21 +6,24 @@ import { RecipesComponent, RecipeComponent  } from './components';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import {RecipesService} from "./services";
 import {PaginationModule} from "ngx-bootstrap/pagination";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NewRecipeComponent } from './components/new-recipe/new-recipe.component';
 
 
 @NgModule({
   declarations: [
     RecipesComponent,
-    RecipeComponent
+    RecipeComponent,
+    NewRecipeComponent
   ],
-  imports: [
-    CommonModule,
-    RecipesRoutingModule,
-    HttpClientModule,
-    PaginationModule,
-    FormsModule,
-  ],
+    imports: [
+        CommonModule,
+        RecipesRoutingModule,
+        HttpClientModule,
+        PaginationModule,
+        FormsModule,
+        ReactiveFormsModule,
+    ],
   providers: [
     RecipesService
   ]

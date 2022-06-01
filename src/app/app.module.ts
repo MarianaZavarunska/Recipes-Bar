@@ -9,6 +9,9 @@ import { LayoutComponent } from './layout';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { FooterComponent } from './components/footer/footer.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ModalComponent } from './components/modal/modal.component';
+import { CreateFormComponent } from './components/create-form/create-form.component';
 
 
 const icons = {
@@ -23,13 +26,16 @@ const icons = {
     HeaderComponent,
     LayoutComponent,
     SearchFormComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent,
+    CreateFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    NgxBootstrapIconsModule.pick(icons)
+    NgxBootstrapIconsModule.pick(icons),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,5 +6,6 @@ import {BehaviorSubject} from "rxjs";
 })
 export class DataService {
  searchStorage = new BehaviorSubject<{recipe: string}>({ recipe: ""})
+  uploadStorage = new BehaviorSubject<{recipe: string}>({ recipe: ""})
   constructor() { }
 }
