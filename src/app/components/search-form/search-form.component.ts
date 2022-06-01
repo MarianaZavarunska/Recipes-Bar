@@ -25,7 +25,14 @@ export class SearchFormComponent implements OnInit {
 
 
   saveToStorage() {
-    this.dataService.searchStorage.next(this.form.value);
+    // this.dataService.searchStorage.next(this.form.value);
+
+    this.router.navigate(
+      ['/recipes'],
+      {
+        queryParams: { page: 1, query: this.form.value.recipe},
+        queryParamsHandling: 'merge' }
+    );
     this.form.reset();
   }
 }

@@ -1,10 +1,10 @@
 <main class="main-container">
   <div class="row">
     <div class="col-xs-12 col-12 ">
-      <pagination
+      <pagination #pagination
                   [totalItems]="recipes.length-1"
                   [itemsPerPage] = '12'
-                  [(ngModel)]="currentPage"
+                  [maxSize]="6"
                   (pageChanged)="pageChanged($event)">
        class="pagination-container"
       </pagination>

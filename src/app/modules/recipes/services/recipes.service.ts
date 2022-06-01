@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-import {IResponse} from "../../../models";
+import {IRecipe, IResponse} from "../../../models";
 import { urls } from 'src/app/config/urls';
 
 @Injectable({
@@ -14,5 +14,9 @@ export class RecipesService {
 
   getRecipes(searchParam = 'pizza'): Observable<IResponse> {
     return this.http.get<IResponse>(`${urls.recipes}&search=${searchParam}`);
+  }
+
+  createRecipe(uploadedRecipe:IRecipe):Observable<any> {
+    return this.http.post(`${urls.recipes}`,uploadedRecipe);
   }
 }

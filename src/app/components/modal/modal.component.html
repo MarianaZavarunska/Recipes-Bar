@@ -8,6 +8,6 @@
     </button>
   </div>
   <div class="modal-body">
-   <app-new-recipe></app-new-recipe>
+   <app-new-recipe (onCreate)="modalRef?.hide()"></app-new-recipe>
   </div>
 </ng-template>
