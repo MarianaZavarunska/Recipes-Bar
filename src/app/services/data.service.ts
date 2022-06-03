@@ -8,6 +8,7 @@ import {IIngredient, IRecipe} from '../models';
 export class DataService {
  searchStorage = new BehaviorSubject<{recipe: string}>({ recipe: ""})
   uploadStorage = new BehaviorSubject<{title: string}>({ title: ""})
+  switchStorage = new BehaviorSubject<boolean>(false)
 
   // uploadStorage = new BehaviorSubject<IRecipe>({
   //   id: '',

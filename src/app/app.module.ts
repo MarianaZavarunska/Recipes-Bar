@@ -7,7 +7,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent, SearchFormComponent, FooterComponent, ModalComponent, ThemeSwitherComponent } from './components';
+import { HeaderComponent, SearchFormComponent, FooterComponent, ModalComponent, ThemeSwitcherComponent } from './components';
 import { LayoutComponent } from './layout';
 import {RecipesModule} from "./modules/recipes/recipes.module";
 
@@ -27,7 +27,7 @@ const icons = {
     SearchFormComponent,
     FooterComponent,
     ModalComponent,
-    ThemeSwitherComponent
+    ThemeSwitcherComponent
   ],
     imports: [
         BrowserModule,

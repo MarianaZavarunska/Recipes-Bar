@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/*MDB SCSS*/
+/*@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";*/
 
 :root{
   /*#DAA520*/
@@ -17,6 +19,10 @@ body{
   background-color: var(--secondary-color);
   padding: 0;
   margin: 0 5rem;
+}
+
+body.switched{
+  background-color: white;
 }
 
 /*Pagination*/
@@ -60,3 +66,21 @@ button.upload-btn {
   padding: .5rem;
   margin: .3rem;
 }
+
+/*Switcher themes*/
+
+.form-check {
+  position: absolute;
+  top: 1px;
+}
+
+.form-switch .form-check-input {
+  border-radius: 0;
+  width: 4em;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color:  var(--primary-color);
+}
+

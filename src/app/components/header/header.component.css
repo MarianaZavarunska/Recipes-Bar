@@ -1,5 +1,4 @@
 header {
-  /*background-color: var(--secondary-color);*/
   height: 110px;
   position: relative;
   margin-bottom: 1rem;
@@ -41,4 +40,8 @@ header:after {
 
 .header-container > div.img-container > img{
   width: 100px;
+}
+
+header div.switched {
+  background-color: red;
 }
