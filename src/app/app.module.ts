@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {AppRoutingModule} from "./app-routing.module";
 import { NgxBootstrapIconsModule, facebook, instagram, twitter} from 'ngx-bootstrap-icons';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import {ReactiveFormsModule} from "@angular/forms";
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent, SearchFormComponent, FooterComponent, ModalComponent, ThemeSwitherComponent } from './components';
 import { LayoutComponent } from './layout';
-import { SearchFormComponent } from './components/search-form/search-form.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import { FooterComponent } from './components/footer/footer.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
-import { ModalComponent } from './components/modal/modal.component';
-import { CreateFormComponent } from './components/create-form/create-form.component';
 import {RecipesModule} from "./modules/recipes/recipes.module";
+
 
 
 const icons = {
@@ -29,7 +27,7 @@ const icons = {
     SearchFormComponent,
     FooterComponent,
     ModalComponent,
-    CreateFormComponent
+    ThemeSwitherComponent
   ],
     imports: [
         BrowserModule,
@@ -37,7 +35,8 @@ const icons = {
         ReactiveFormsModule,
         NgxBootstrapIconsModule.pick(icons),
         ModalModule.forRoot(),
-        RecipesModule
+        RecipesModule,
+        MdbCheckboxModule
     ],
   providers: [],
   bootstrap: [AppComponent]
