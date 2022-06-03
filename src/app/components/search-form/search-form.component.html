@@ -1,6 +1,6 @@
 <form [formGroup]="form" >
   <div>
-    <input type="text" formControlName="recipe" placeholder="search">
+    <input type="text" formControlName="recipe" placeholder="search" class="search-input">
   </div>
   <button [disabled]="form.invalid" (click)="saveToStorage()">Search</button>
 </form>

@@ -12,7 +12,7 @@ export class RecipesService {
 
   constructor(private http: HttpClient) { }
 
-  getRecipes(searchParam = 'pizza'): Observable<IResponse> {
+  getRecipes(searchParam = 'avocado'): Observable<IResponse> {
     return this.http.get<IResponse>(`${urls.recipes}&search=${searchParam}`);
   }
 

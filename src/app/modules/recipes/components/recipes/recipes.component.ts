@@ -15,12 +15,15 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class RecipesComponent implements  OnInit{
   recipesToRender: IRecipe[] = [];
   resetPage = true;
+  data:string;
 
   @Input()
   recipes: IRecipe[] = []
 
   constructor(private recipeService: RecipesService, private dataService: DataService,
-              private route: ActivatedRoute, private router: Router) { }
+              private route: ActivatedRoute, private router: Router) {
+    this.data = this._getData();
+  }
 
   ngOnInit() {
     this.route.queryParams
@@ -53,5 +56,12 @@ export class RecipesComponent implements  OnInit{
           queryParams: { page: event.page },
           queryParamsHandling: 'merge' }
       );
+  }
+
+  _getData():string {
+    const time = new Date();
+    const timeString = time.toLocaleString('en-US', { day:'numeric', month:'long', weekday:'long', hour: 'numeric', minute:'numeric', hour12: true})
+
+    return timeString;
   }
 }

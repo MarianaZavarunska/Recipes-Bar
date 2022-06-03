@@ -11,21 +11,30 @@ import { DataService } from 'src/app/services';
 export class HeaderComponent implements OnInit {
   isSwitched:boolean;
 
-
   constructor(@Inject(DOCUMENT) private document: Document, private dataService: DataService) {
 
-    // dataService.switchStorage.subscribe(value=> {
-    //   this.isSwitched = value;
-    // })
   }
 
   ngOnInit() {
     this.dataService.switchStorage.subscribe(value => {
+
+ // TODO:CHILDREN background
+      const paginationPageArray = Array.from(this.document.body.getElementsByClassName('pagination-page'));
+      const paginationLinkArray = Array.from(this.document.body.getElementsByClassName('page-link'));
+
       this.isSwitched = value;
       if (this.isSwitched) {
+
         this.document.body.classList.add('switched');
+        this.document.body.getElementsByClassName('search-input')[0].classList.add('switched')
+        paginationPageArray.forEach((item) => item.classList.add('switched'));
+        paginationLinkArray .forEach((item) => item.classList.add('switched'));
+
       } else {
         this.document.body.classList.remove('switched');
+        this.document.body.getElementsByClassName('search-input')[0].classList.remove('switched')
+        paginationPageArray.forEach((item) => item.classList.remove('switched'));
+        paginationLinkArray.forEach((item) => item.classList.remove('switched'));
       }
 
     })

@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Router} from "@angular/router";
-import {DataService} from "../../services";
+
 
 @Component({
   selector: 'app-search-form',
@@ -11,7 +11,7 @@ import {DataService} from "../../services";
 export class SearchFormComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private router: Router, private dataService: DataService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this._createForm();

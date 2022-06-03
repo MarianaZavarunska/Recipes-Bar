@@ -1,7 +1,7 @@
 form {
   display: flex;
 }
-form > div> input {
+form > div> input.search-input {
   width: 200px;
   font-size: 1.2rem;
   border: none;
@@ -9,6 +9,10 @@ form > div> input {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
+form > div> input.switched{
+   background-color: var(--white-color);
+   color: var(--shadow-color);
+ }
 
 
 form > button{

@@ -9,6 +9,7 @@
   --primary-color:  #DAA520;
   --secondary-color: #4b4b4b;
   --shadow-color: black;
+  --white-color: white;
 }
 
 * {
@@ -22,7 +23,7 @@ body{
 }
 
 body.switched{
-  background-color: white;
+  background-color: var(--white-color);
 }
 
 /*Pagination*/
@@ -33,6 +34,7 @@ body.switched{
   box-shadow: 0 3px 5px var(--shadow-color);
   border-color: var(--shadow-color);
 }
+
 .main-container .pagination li.active .page-link {
   background-color: var(--primary-color);
   color: var(--shadow-color);
@@ -43,10 +45,16 @@ body.switched{
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 .page-item:first-child .page-link {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+.pagination *.switched {
+  background-color: var(--white-color);
+}
+
 
  /*Modal */
 .modal-title {
@@ -82,5 +90,12 @@ button.upload-btn {
 .form-check-input:checked {
   background-color: var(--primary-color);
   border-color:  var(--primary-color);
+}
+
+/*Carousel*/
+
+mdb-carousel-item > img{
+  height: 80vh;
+  margin: 0 auto;
 }
 
