@@ -3,7 +3,7 @@
     id="button-basic"
     dropdownToggle
     type="button"
-    class="btn btn-primary dropdown-toggle"
+    class="btn btn-primary dropdown-toggle upload-btn"
     aria-controls="dropdown-basic"
   >
     <i-bs name="bookmark"
@@ -21,7 +21,7 @@
     aria-labelledby="button-basic"
   >
 
-    <li *ngIf="!isBookmarked" role="menuitem">
+    <li *ngIf="bookmarkedRecipes.length === 0" role="menuitem" class="empty-bookmark">
       <a class="dropdown-item" href="#">
       <i-bs name="exclamation-triangle"
             width="30"

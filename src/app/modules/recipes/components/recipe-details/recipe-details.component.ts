@@ -13,7 +13,7 @@ import {DataService} from "../../../../services";
 })
 export class RecipeDetailsComponent implements OnInit {
   recipe:IRecipe;
-  bookmarkedRecipes: IRecipe[] = [];
+  bookmarkedRecipes: Partial<IRecipe>[] = [];
   isBookmarked:boolean;
 
 
@@ -21,12 +21,19 @@ export class RecipeDetailsComponent implements OnInit {
   constructor(private  activatedRoute: ActivatedRoute, private recipesService: RecipesService,  private dataService: DataService) { }
 
   ngOnInit(): void {
+
+
     this.activatedRoute.params.subscribe(value => {
-      console.log(value);
+
       this.recipesService.getRecipeById(value['id']).subscribe(({data}) => {
         this.recipe = data.recipe;
         this.recipe.ingredients.forEach(el => {
          this._convertNumberToFraction(el);
+        })
+
+        this.dataService.bookmarks.subscribe(value => {
+          this.bookmarkedRecipes = value.bookmarkedRecipes;
+          this.isBookmarked = this.bookmarkedRecipes.findIndex(i => i.id === this.recipe.id) >= 0;
         })
       });
     })
@@ -55,8 +62,10 @@ export class RecipeDetailsComponent implements OnInit {
   }
 
   addToBookmark():void{
-    this.isBookmarked = !this.isBookmarked
-    this.bookmarkedRecipes.push(this.recipe);
+    this.isBookmarked = !this.isBookmarked;
+    let bookmarkIndex = this.bookmarkedRecipes.findIndex(i => i.id === this.recipe.id);
+    if(this.isBookmarked && bookmarkIndex < 0) this.bookmarkedRecipes.push(this.recipe);
+    else this.bookmarkedRecipes.splice(bookmarkIndex, 1);
 
     this.dataService.bookmarks.next({isBookmarked:this.isBookmarked, bookmarkedRecipes: this.bookmarkedRecipes})
   }

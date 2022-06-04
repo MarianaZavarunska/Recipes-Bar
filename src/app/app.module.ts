@@ -1,7 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {AppRoutingModule} from "./app-routing.module";
-import { NgxBootstrapIconsModule, facebook, instagram, twitter, search, pencil,bookmark } from 'ngx-bootstrap-icons';
+import { NgxBootstrapIconsModule,
+  facebook,
+  instagram,
+  twitter,
+  search,
+  pencil,
+  bookmark,
+  exclamationTriangle
+} from 'ngx-bootstrap-icons';
+
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -28,7 +37,8 @@ const icons = {
   facebook,
   search,
   pencil,
-  bookmark
+  bookmark,
+  exclamationTriangle,
 };
 
 @NgModule({
