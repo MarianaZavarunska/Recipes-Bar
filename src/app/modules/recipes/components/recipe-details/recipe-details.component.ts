@@ -28,6 +28,29 @@ export class RecipeDetailsComponent implements OnInit {
 
   }
 
+  decrease():void {
+    if(this.recipe.servings > 1) {
+
+      this.recipe.ingredients.forEach( (item) => {
+        item.quantity = item.quantity / this.recipe.servings * (this.recipe.servings - 1);
+        this._convertNumberToFraction(item)
+      })
+      this.recipe.servings--;
+    }
+  }
+
+  increase():void {
+
+    this.recipe.ingredients.forEach( (item) => {
+      item.quantity = item.quantity / this.recipe.servings * (this.recipe.servings + 1);
+      this._convertNumberToFraction(item)
+    })
+    this.recipe.servings++;
+
+  }
+
+  // TODO: Fix 0 quantity
+
   _convertNumberToFraction(item: IIngredient): void{
     let nmb = number(item.quantity);
     let frc = fraction(nmb);
@@ -38,7 +61,8 @@ export class RecipeDetailsComponent implements OnInit {
       quotient = Math.floor(frc.n / frc.d);
       remainder = frc.n % frc.d;
     }
-   item.quantityDisplayValue = !!(item.quantity % 1) ? `${quotient > 0 ? `${quotient} ` : ""}${remainder }/${frc.d}` : item.quantity.toString();
+   item.quantityDisplayValue = !!(item.quantity % 1) ? `${quotient > 0 ? `${quotient} ` : ""}${remainder }/${frc.d}` : item.quantity?.toString();
   }
-
+  
 }
+

@@ -25,19 +25,18 @@
                 height="30"
                 class="recipe-info-icon"></i-bs>
 
-
       <span class="recipe-info-data recipe-info-data--people">{{recipe.servings}}</span>
       <span class="recipe-info-text">servings</span>
 
       <div class="recipe-info-buttons">
-        <button class="btn--tiny btn--update-servings" data-update-to="3">
+        <button class="btn--tiny btn--update-servings" data-update-to="3" (click)="decrease()">
           <i-bs name="file-earmark-minus"
                 width="30"
                 height="30">
 
           </i-bs>
         </button>
-        <button class="btn--tiny btn--update-servings" data-update-to="5">
+        <button class="btn--tiny btn--update-servings" data-update-to="5" (click)="increase()">
           <i-bs name="file-earmark-plus"
                 width="30"
                 height="30">
