@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import {AppRoutingModule} from "./app-routing.module";
 import { NgxBootstrapIconsModule, facebook, instagram, twitter, search, pencil,bookmark } from 'ngx-bootstrap-icons';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
-import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
 import {
@@ -15,7 +16,8 @@ import {
   ModalComponent,
   ThemeSwitcherComponent,
   BookmarkComponent,
-  DropdownComponent
+  DropdownComponent,
+  CategoriesComponent
   } from './components';
 import { LayoutComponent } from './layout';
 import {RecipesModule} from "./modules/recipes/recipes.module";
@@ -40,6 +42,7 @@ const icons = {
     ThemeSwitcherComponent,
     BookmarkComponent,
     DropdownComponent,
+    CategoriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,9 +50,10 @@ const icons = {
     ReactiveFormsModule,
     NgxBootstrapIconsModule.pick(icons),
     ModalModule.forRoot(),
+    BsDropdownModule.forRoot(),
     RecipesModule,
     MdbCheckboxModule,
-    MdbDropdownModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

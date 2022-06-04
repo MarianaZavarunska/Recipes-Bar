@@ -1,16 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 import {DataService} from "../../services";
 import {IRecipe} from "../../models";
+
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.css']
 })
-export class DropdownComponent implements OnInit {
-  isBookmarked: boolean;
+export class DropdownComponent implements OnInit{
+  isBookmarked: boolean = false;
   bookmarkedRecipes: Partial<IRecipe>[];
+
 
   constructor(private dataService: DataService) { }
 
@@ -20,5 +22,6 @@ export class DropdownComponent implements OnInit {
       this.bookmarkedRecipes = value.bookmarkedRecipes;
     })
   }
+
 
 }

@@ -1,27 +1,49 @@
-<div mdbDropdown class="dropdown">
+<div class="btn-group" dropdown>
   <button
-    class="btn btn-primary dropdown-toggle upload-btn"
+    id="button-basic"
+    dropdownToggle
     type="button"
-    id="dropdownMenuButton"
-    aria-expanded="false"
-    mdbDropdownToggle
+    class="btn btn-primary dropdown-toggle"
+    aria-controls="dropdown-basic"
   >
     <i-bs name="bookmark"
           width="19"
           height="19">
     </i-bs>
-   Bookmarks
+    Bookmarks
+    <span class="caret"></span>
   </button>
-  <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <div *ngIf="!isBookmarked">
+  <ul
+    id="dropdown-basic"
+    *dropdownMenu
+    class="dropdown-menu"
+    role="menu"
+    aria-labelledby="button-basic"
+  >
+
+    <li *ngIf="!isBookmarked" role="menuitem">
+      <a class="dropdown-item" href="#">
       <i-bs name="exclamation-triangle"
             width="30"
             height="30">
       </i-bs>
       <p>No bookmarks yet. Find a nice recipe and bookmark it ;)</p>
-    </div>
-    <li *ngFor="let recipe of bookmarkedRecipes"><a class="dropdown-item" href="#" >
-      <app-bookmark [recipe]="recipe"></app-bookmark>
     </a></li>
+    <li   *ngFor="let recipe of bookmarkedRecipes" role="menuitem">
+      <a class="dropdown-item" href="#">
+        <app-bookmark [recipe]="recipe"></app-bookmark>
+      </a>
+    </li>
+<!--    <li role="menuitem">-->
+<!--      <a class="dropdown-item" href="#">Something else here</a>-->
+<!--    </li>-->
+<!--    <li class="divider dropdown-divider"></li>-->
+<!--    <li role="menuitem">-->
+<!--      <a class="dropdown-item" href="#">Separated link</a>-->
+<!--    </li>-->
   </ul>
 </div>
+
+
+
+

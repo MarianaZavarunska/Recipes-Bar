@@ -13,7 +13,7 @@ import {DataService} from "../../../../services";
 })
 export class RecipeDetailsComponent implements OnInit {
   recipe:IRecipe;
-  bookmarkedRecipes: IRecipe[];
+  bookmarkedRecipes: IRecipe[] = [];
   isBookmarked:boolean;
 
 

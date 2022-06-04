@@ -90,7 +90,6 @@ button.upload-btn {
 
 }
 
-
 .form-check-input:checked {
   background-color: var(--primary-color);
   border-color:  var(--primary-color);
@@ -114,3 +113,10 @@ span.switched {
   background-color: var(--shadow-color);
 
 }
+
+/*Dropdown */
+
+.btn-primary:hover{
+ background-color: var(--primary-color);
+}
+
