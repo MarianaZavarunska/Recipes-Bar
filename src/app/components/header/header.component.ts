@@ -27,16 +27,16 @@ export class HeaderComponent implements OnInit {
 
         this.document.body.classList.add('switched');
         this.document.body.getElementsByClassName('search-input')[0].classList.add('switched')
-        this.document.body.getElementsByClassName('carousel-control-prev-icon')[0].classList.add('switched')
-        this.document.body.getElementsByClassName('carousel-control-next-icon')[0].classList.add('switched')
+        this.document.body.getElementsByClassName('carousel-control-prev-icon')[0]?.classList.add('switched')
+        this.document.body.getElementsByClassName('carousel-control-next-icon')[0]?.classList.add('switched')
         paginationPageArray.forEach((item) => item.classList.add('switched'));
         paginationLinkArray .forEach((item) => item.classList.add('switched'));
 
       } else {
         this.document.body.classList.remove('switched');
         this.document.body.getElementsByClassName('search-input')[0].classList.remove('switched')
-        this.document.body.getElementsByClassName('carousel-control-next-icon')[0].classList.remove('switched')
-        this.document.body.getElementsByClassName('carousel-control-prev-icon')[0].classList.remove('switched')
+        this.document.body.getElementsByClassName('carousel-control-next-icon')[0]?.classList.remove('switched')
+        this.document.body.getElementsByClassName('carousel-control-prev-icon')[0]?.classList.remove('switched')
         paginationPageArray.forEach((item) => item.classList.remove('switched'));
         paginationLinkArray.forEach((item) => item.classList.remove('switched'));
       }

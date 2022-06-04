@@ -84,8 +84,12 @@ button.upload-btn {
 
 .form-switch .form-check-input {
   border-radius: 0;
+  border: 2px solid var(--primary-color);
   width: 4em;
+  padding: 0.7rem;
+
 }
+
 
 .form-check-input:checked {
   background-color: var(--primary-color);

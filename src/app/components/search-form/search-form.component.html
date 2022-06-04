@@ -2,5 +2,11 @@
   <div>
     <input type="text" formControlName="recipe" placeholder="search" class="search-input">
   </div>
-  <button [disabled]="form.invalid" (click)="saveToStorage()">Search</button>
+  <button [disabled]="form.invalid" (click)="saveToStorage()">
+    <i-bs name="search"
+          width="19"
+          height="19">
+    </i-bs>
+    Search
+  </button>
 </form>
