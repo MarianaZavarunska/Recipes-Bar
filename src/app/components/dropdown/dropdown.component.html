@@ -1,0 +1,27 @@
+<div mdbDropdown class="dropdown">
+  <button
+    class="btn btn-primary dropdown-toggle upload-btn"
+    type="button"
+    id="dropdownMenuButton"
+    aria-expanded="false"
+    mdbDropdownToggle
+  >
+    <i-bs name="bookmark"
+          width="19"
+          height="19">
+    </i-bs>
+   Bookmarks
+  </button>
+  <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <div *ngIf="!isBookmarked">
+      <i-bs name="exclamation-triangle"
+            width="30"
+            height="30">
+      </i-bs>
+      <p>No bookmarks yet. Find a nice recipe and bookmark it ;)</p>
+    </div>
+    <li *ngFor="let recipe of bookmarkedRecipes"><a class="dropdown-item" href="#" >
+      <app-bookmark [recipe]="recipe"></app-bookmark>
+    </a></li>
+  </ul>
+</div>

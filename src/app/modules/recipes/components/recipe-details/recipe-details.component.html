@@ -50,11 +50,18 @@
       <i-bs name="person"></i-bs>
     </div>
 
-    <button class="btn--round btn--bookmark">
+    <button class="btn--round btn--bookmark" (click)="addToBookmark()">
+
+      <i-bs name="bookmark-fill"
+            width="30"
+            height="30"
+            *ngIf="isBookmarked">
+      </i-bs>
+
       <i-bs name="bookmark"
             width="30"
-            height="30">
-
+            height="30"
+            *ngIf="!isBookmarked">
       </i-bs>
     </button>
   </div>

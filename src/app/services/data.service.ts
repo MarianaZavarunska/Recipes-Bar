@@ -6,20 +6,13 @@ import {IIngredient, IRecipe} from '../models';
   providedIn: 'root'
 })
 export class DataService {
- searchStorage = new BehaviorSubject<{recipe: string}>({ recipe: ""})
-  uploadStorage = new BehaviorSubject<{title: string}>({ title: ""})
-  switchStorage = new BehaviorSubject<boolean>(false)
-
-  // uploadStorage = new BehaviorSubject<IRecipe>({
-  //   id: '',
-  //   title: '',
-  //   publisher: '',
-  //   image_url: '',
-  //   ingredients: [],
-  //   source_url: '',
-  //   servings: 0,
-  //   cooking_time: 0
-  // })
+ searchStorage = new BehaviorSubject<{recipe: string}>({ recipe: ""});
+  uploadStorage = new BehaviorSubject<{title: string}>({ title: ""});
+  isSwitchStorage = new BehaviorSubject<boolean>(false);
+  bookmarks = new BehaviorSubject<{isBookmarked: boolean,bookmarkedRecipes : Partial<IRecipe>[]}>({
+    isBookmarked:false,
+    bookmarkedRecipes:[],
+  });
 
   constructor() { }
 }

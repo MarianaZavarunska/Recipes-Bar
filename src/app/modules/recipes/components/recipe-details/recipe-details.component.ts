@@ -4,6 +4,7 @@ import { fraction, number } from 'mathjs';
 
 import {IIngredient, IRecipe} from "../../../../models";
 import {RecipesService} from "../../services";
+import {DataService} from "../../../../services";
 
 @Component({
   selector: 'app-recipe-details',
@@ -12,8 +13,12 @@ import {RecipesService} from "../../services";
 })
 export class RecipeDetailsComponent implements OnInit {
   recipe:IRecipe;
+  bookmarkedRecipes: IRecipe[];
+  isBookmarked:boolean;
 
-  constructor(private  activatedRoute: ActivatedRoute, private recipesService: RecipesService) { }
+
+
+  constructor(private  activatedRoute: ActivatedRoute, private recipesService: RecipesService,  private dataService: DataService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(value => {
@@ -49,6 +54,13 @@ export class RecipeDetailsComponent implements OnInit {
 
   }
 
+  addToBookmark():void{
+    this.isBookmarked = !this.isBookmarked
+    this.bookmarkedRecipes.push(this.recipe);
+
+    this.dataService.bookmarks.next({isBookmarked:this.isBookmarked, bookmarkedRecipes: this.bookmarkedRecipes})
+  }
+
   // TODO: Fix 0 quantity
 
   _convertNumberToFraction(item: IIngredient): void{
@@ -63,6 +75,6 @@ export class RecipeDetailsComponent implements OnInit {
     }
    item.quantityDisplayValue = !!(item.quantity % 1) ? `${quotient > 0 ? `${quotient} ` : ""}${remainder }/${frc.d}` : item.quantity?.toString();
   }
-  
+
 }
 

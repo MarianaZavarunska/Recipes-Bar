@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.switchStorage.subscribe(value => {
+    this.dataService.isSwitchStorage.subscribe(value => {
 
  // TODO:CHILDREN background
       const paginationPageArray = Array.from(this.document.body.getElementsByClassName('pagination-page'));
@@ -40,7 +40,6 @@ export class HeaderComponent implements OnInit {
         paginationPageArray.forEach((item) => item.classList.remove('switched'));
         paginationLinkArray.forEach((item) => item.classList.remove('switched'));
       }
-
     })
   }
 

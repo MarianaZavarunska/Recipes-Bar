@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {AppRoutingModule} from "./app-routing.module";
-import { NgxBootstrapIconsModule, facebook, instagram, twitter, search, pencil} from 'ngx-bootstrap-icons';
+import { NgxBootstrapIconsModule, facebook, instagram, twitter, search, pencil,bookmark } from 'ngx-bootstrap-icons';
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import {ReactiveFormsModule} from "@angular/forms";
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent, SearchFormComponent, FooterComponent, ModalComponent, ThemeSwitcherComponent,CarouselComponent  } from './components';
+import {
+  HeaderComponent,
+  SearchFormComponent,
+  FooterComponent,
+  ModalComponent,
+  ThemeSwitcherComponent,
+  BookmarkComponent,
+  DropdownComponent
+  } from './components';
 import { LayoutComponent } from './layout';
 import {RecipesModule} from "./modules/recipes/recipes.module";
-
 
 const icons = {
   twitter,
@@ -18,6 +26,7 @@ const icons = {
   facebook,
   search,
   pencil,
+  bookmark
 };
 
 @NgModule({
@@ -29,6 +38,8 @@ const icons = {
     FooterComponent,
     ModalComponent,
     ThemeSwitcherComponent,
+    BookmarkComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +49,7 @@ const icons = {
     ModalModule.forRoot(),
     RecipesModule,
     MdbCheckboxModule,
-
+    MdbDropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

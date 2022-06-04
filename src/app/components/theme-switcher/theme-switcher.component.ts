@@ -17,7 +17,7 @@ export class ThemeSwitcherComponent implements OnInit {
   onSwitch(){
     this.isSwitch =!this.isSwitch;
 
-   this.dataService.switchStorage.next(this.isSwitch)
+   this.dataService.isSwitchStorage.next(this.isSwitch)
   }
 
 }

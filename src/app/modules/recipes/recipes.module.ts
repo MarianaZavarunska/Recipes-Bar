@@ -13,15 +13,15 @@ import {
   fileEarmarkPlus,
   person,
   bookmark,
+  bookmarkFill,
   arrowBarRight,
-  checkLg
+  checkLg,
 } from 'ngx-bootstrap-icons';
 
-import {RecipesComponent, RecipeComponent, NewRecipeComponent } from './components';
+import {RecipesComponent, RecipeComponent, NewRecipeComponent,RecipeDetailsComponent,CarouselComponent } from './components';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import {RecipesService} from "./services";
-import {CarouselComponent} from "../../components";
-import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+
 
 const icons = {
   alarm,
@@ -31,6 +31,7 @@ const icons = {
   fileEarmarkPlus,
   person,
   bookmark,
+  bookmarkFill,
   arrowBarRight,
   checkLg
 }
