@@ -2,6 +2,7 @@ import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 
 import {LayoutComponent} from "./layout";
+import {NotFoundComponent} from "./components";
 
 
 const routes:Routes = [
@@ -10,7 +11,7 @@ const routes:Routes = [
       { path: 'recipes', loadChildren: () => import('./modules/recipes/recipes.module').then(c => c.RecipesModule)},
 
     ]},
-  // {path: '**', component: NotFoundComponent},
+  {path: '**', component: NotFoundComponent},
 ]
 
 @NgModule({

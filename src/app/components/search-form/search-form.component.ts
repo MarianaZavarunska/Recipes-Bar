@@ -1,7 +1,6 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {Component, OnInit } from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-
 
 @Component({
   selector: 'app-search-form',
@@ -19,13 +18,12 @@ export class SearchFormComponent implements OnInit {
 
   _createForm():void{
     this.form = new FormGroup({
-      recipe: new FormControl(null ),
+      recipe: new FormControl(null, [Validators.pattern('^[A-Za-z]+')] ),
     });
   }
 
 
   saveToStorage() {
-    // this.dataService.searchStorage.next(this.form.value);
 
     this.router.navigate(
       ['/recipes'],

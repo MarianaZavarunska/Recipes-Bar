@@ -6,3 +6,4 @@ export * from './theme-switcher/theme-switcher.component';
 export * from './bookmark/bookmark.component';
 export * from './dropdown/dropdown.component';
 export * from './categories/categories.component';
+export * from './not-found/not-found.component';

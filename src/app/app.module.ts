@@ -30,6 +30,7 @@ import {
   } from './components';
 import { LayoutComponent } from './layout';
 import {RecipesModule} from "./modules/recipes/recipes.module";
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const icons = {
   twitter,
@@ -53,6 +54,7 @@ const icons = {
     BookmarkComponent,
     DropdownComponent,
     CategoriesComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
