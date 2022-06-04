@@ -9,6 +9,7 @@ import {RecipesComponent, RecipeComponent, NewRecipeComponent } from './componen
 import { RecipesRoutingModule } from './recipes-routing.module';
 import {RecipesService} from "./services";
 import {CarouselComponent} from "../../components";
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {CarouselComponent} from "../../components";
     RecipesComponent,
     RecipeComponent,
     NewRecipeComponent,
-    CarouselComponent
+    CarouselComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     CommonModule,

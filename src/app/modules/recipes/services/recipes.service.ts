@@ -16,7 +16,12 @@ export class RecipesService {
     return this.http.get<IResponse>(`${urls.recipes}&search=${searchParam}`);
   }
 
+  getRecipeById(id: string): Observable<IResponse> {
+    return this.http.get<IResponse>(`${urls.recipe.replace('#', `${id}`)}`)
+  }
+
   createRecipe(uploadedRecipe:IRecipe):Observable<any> {
     return this.http.post(`${urls.recipes}`,uploadedRecipe);
   }
+
 }

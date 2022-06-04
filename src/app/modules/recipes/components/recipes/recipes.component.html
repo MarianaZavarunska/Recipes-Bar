@@ -1,5 +1,5 @@
 <main class="main-container">
-  <h1>Top recipes till {{data}}</h1>
+  <h1>Top recipes on {{data}}</h1>
 <app-carousel></app-carousel>
   <div class="row">
     <div class="col-xs-12 col-12 ">
@@ -12,7 +12,7 @@
       </pagination>
     </div>
   </div>
-
+ <div class="line-container"></div>
   <div class="recipes-container">
     <app-recipe *ngFor="let recipe of recipesToRender" [recipe]="recipe"></app-recipe>
   </div>

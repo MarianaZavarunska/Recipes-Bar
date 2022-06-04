@@ -25,5 +25,9 @@ div.recipes-container{
   margin: 3rem 0;
 }
 
+.line-container{
+  border-bottom: 2px solid var(--primary-color);
+  margin: 2rem 1rem 0;
+}
 
 

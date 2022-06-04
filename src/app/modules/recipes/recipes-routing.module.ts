@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 
 import { RecipesComponent } from './components';
+import {RecipeDetailsComponent} from "./components/recipe-details/recipe-details.component";
 
 
 const routes: Routes = [
-  { path: '', component: RecipesComponent}
-  // {patch: ':id', component: }
+  { path: '', component: RecipesComponent},
+  { path: 'recipes/:id', component: RecipeDetailsComponent },
 ];
 
 @NgModule({

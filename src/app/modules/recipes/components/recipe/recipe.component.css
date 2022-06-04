@@ -30,3 +30,7 @@ div.recipe-container > div:last-of-type{
   color: var(--primary-color);
   padding-right: .5rem;
 }
+
+a {
+  text-decoration: none;
+}

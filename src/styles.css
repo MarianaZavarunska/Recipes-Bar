@@ -99,3 +99,14 @@ mdb-carousel-item > img{
   margin: 0 auto;
 }
 
+mdb-carousel-item > div> h5 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  color: var(--shadow-color);
+}
+
+span.switched {
+  background-color: var(--shadow-color);
+
+}
