@@ -1,4 +1,4 @@
-<div class="recipe-details-container">
+<div *ngIf="recipe" class="recipe-details-container">
   <figure class="recipe-fig">
     <img src="{{recipe.image_url}}" alt="{{recipe.title}}" class="recipe-img"/>
 
@@ -9,47 +9,68 @@
 
   <div class="recipe-details">
     <div class="recipe-info">
-      <span class="recipe-info-icon">
-        <i-bs name="alarm"> </i-bs>
-      </span>
+
+        <i-bs name="alarm"
+              width="30"
+              height="30"
+              class="recipe-info-icon">
+        </i-bs>
       <span class="recipe-info-data ">{{recipe.cooking_time}}</span>
       <span class="recipe-info-text">minutes</span>
     </div>
 
     <div class="recipe-info">
-      <span class="recipe-info-icon">
-          <i-bs name="people" ></i-bs>
-      </span>
+          <i-bs name="people"
+                width="30"
+                height="30"
+                class="recipe-info-icon"></i-bs>
+
 
       <span class="recipe-info-data recipe-info-data--people">{{recipe.servings}}</span>
       <span class="recipe-info-text">servings</span>
 
       <div class="recipe-info-buttons">
         <button class="btn--tiny btn--update-servings" data-update-to="3">
-          <i-bs name="file-earmark-minus"></i-bs>
+          <i-bs name="file-earmark-minus"
+                width="30"
+                height="30">
+
+          </i-bs>
         </button>
         <button class="btn--tiny btn--update-servings" data-update-to="5">
-          <i-bs name="file-earmark-plus"></i-bs>
+          <i-bs name="file-earmark-plus"
+                width="30"
+                height="30">
+
+          </i-bs>
         </button>
       </div>
-
-      <div class="recipe-user-generated hidden">
-        <i-bs name="person"></i-bs>
-      </div>
-
-      <button class="btn--round btn--bookmark">
-        <i-bs name="bookmark"></i-bs>
-      </button>
     </div>
+
+    <div class="recipe-user-generated hidden">
+      <i-bs name="person"></i-bs>
+    </div>
+
+    <button class="btn--round btn--bookmark">
+      <i-bs name="bookmark"
+            width="30"
+            height="30">
+
+      </i-bs>
+    </button>
   </div>
 
   <div class="recipe-ingredients">
     <h2 class="heading--2">Recipe ingredients</h2>
-    <ul class="recipe-ingredient-list" *ngFor="let ing of recipe.ingredients">
+    <ul class="recipe-ingredient-list" >
+      <li class="recipe-ingredient" *ngFor="let ing of recipe.ingredients">
+        <i-bs name="check-lg"
+              width="30"
+              height="30"
+              class="recipe-icon">
 
-      <li class="recipe-ingredient">
-        <i-bs name="check-lg" class="recipe-icon"></i-bs>
-        <div class="recipe-quantity">{{ing.quantity}}</div>
+        </i-bs>
+        <div class="recipe-quantity">{{ing.quantityDisplayValue}}</div>
         <div class="recipe-description">
           <span class="recipe-unit">{{ing.unit}}</span>
           {{ing.description}}
@@ -62,115 +83,18 @@
     <h2 class="heading--2">How to cook it</h2>
     <p class="recipe-directions-text">
       This recipe was carefully designed and tested by
-      <span class="recipe-publisher">{{recipe.publisher}}</span>. Please check out
+      <span class="recipe-publisher">{{recipe.publisher}}.  </span>
+     Please check out
       directions at their website.
     </p>
-    <a class="btn--small recipe__btn" href="{{recipe.source_url}}"> target="_blank">
+    <a class="btn--small recipe__btn" href="{{recipe.source_url}}" target="_blank">
       <span>Directions</span>
-      <i-bs name="arrow-bar-right" >
-<!--        class="search-icon"-->
+      <i-bs name="arrow-bar-right"
+            width="30"
+            height="30"
+            class="recipe-icon" >
       </i-bs>
     </a>
   </div>
-
-<!--      <li class="recipe-ingredient">-->
-<!--        <svg class="recipe-icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe-quantity">2</div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit">oz</span>-->
-<!--          kale stems and center ribs removed-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity">1/4</div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit">cup</span>-->
-<!--          / 1 oz / 30g sunflower seeds-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity"></div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit"></span>-->
-<!--          Zest of one lemon-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity">1/4</div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit">tsp</span>-->
-<!--          red pepper flakes-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity"></div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit"></span>-->
-<!--          -&#45;&#45;&#45;&#45;&#45;&#45;optional add-ins &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity">1/4</div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit">tsp</span>-->
-<!--          sansho pepper-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity"></div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit"></span>-->
-<!--          Sea salt to taste-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity"></div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit"></span>-->
-<!--          Dried herbs-->
-<!--        </div>-->
-<!--      </li>-->
-
-<!--      <li class="recipe__ingredient">-->
-<!--        <svg class="recipe__icon">-->
-<!--          <use href="https://forkify-v2.netlify.app/icons.c781f215.svg#icon-check"></use>-->
-<!--        </svg>-->
-<!--        <div class="recipe__quantity"></div>-->
-<!--        <div class="recipe__description">-->
-<!--          <span class="recipe__unit"></span>-->
-<!--          Bee / fennel pollen-->
-<!--        </div>-->
-<!--      </li>-->
-
 
 </div>

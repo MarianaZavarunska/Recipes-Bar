@@ -13,7 +13,8 @@ import {
   fileEarmarkPlus,
   person,
   bookmark,
-  arrowBarRight
+  arrowBarRight,
+  checkLg
 } from 'ngx-bootstrap-icons';
 
 import {RecipesComponent, RecipeComponent, NewRecipeComponent } from './components';
@@ -30,7 +31,8 @@ const icons = {
   fileEarmarkPlus,
   person,
   bookmark,
-  arrowBarRight
+  arrowBarRight,
+  checkLg
 }
 
 @NgModule({

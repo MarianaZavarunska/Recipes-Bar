@@ -52,6 +52,7 @@
  }
 
 .recipe-details {
+  background-image: linear-gradient(to right bottom,var(--primary-color), var(--white-color));
   padding: 7.5rem 8rem 3.5rem;
 }
 
@@ -65,21 +66,24 @@
 }
 
 .recipe-info-icon {
-  height: 2.35rem;
-  width: 2.35rem;
-  fill: #f38e82;
+  color: var(--shadow-color);
   margin-right: 1.15rem;
 }
 
 .recipe-info-data {
   margin-right: 0.5rem;
   font-weight: 700;
+  color: var(--shadow-color);
+}
+
+.recipe-info-text{
+  color: var(--shadow-color);
 }
 
 .recipe-info-buttons {
   display: flex;
   margin-left: 1.6rem;
-  transform: translateY(-1px);
+  transform: translateY(-10px);
 }
 
 .btn--tiny {
@@ -95,7 +99,7 @@
 }
 
 .recipe-user-generated {
-  background-color: #eeeae8;
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,7 +116,7 @@
 }
 
 .btn--round {
-  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  background-image: linear-gradient(to right bottom,  var(--white-color),var(--primary-color));
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -128,7 +132,7 @@
   padding: 5rem 8rem;
   font-size: 1.6rem;
   line-height: 1.4;
-  background-color: #f2efee;
+  background-color: var(--white-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -137,7 +141,7 @@
 .heading--2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #f38e82;
+  color:  var(--primary-color);
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   text-align: center;
@@ -170,7 +174,7 @@
   font-size: 1.7rem;
   text-align: center;
   margin-bottom: 3.5rem;
-  color: #918581;
+  color: var(--primary-color);
 }
 
 .btn--small, .btn--small:link, .btn--small:visited {
@@ -181,7 +185,7 @@
 }
 
 .btn, .btn--small, .btn--small:link, .btn--small:visited {
-  background-image: linear-gradient(to right bottom,#fbdb89,#f48982);
+  background-image: linear-gradient(to right bottom, var(--white-color),var(--primary-color));
   border-radius: 10rem;
   border: none;
   text-transform: uppercase;
@@ -196,4 +200,12 @@
   height: 1.75rem;
   width: 1.75rem;
   fill: currentColor;
+}
+
+.recipe-publisher {
+  color: var(--white-color) ;
+}
+
+.recipe-icon {
+  color: var(--primary-color);
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import { fraction, number } from 'mathjs';
 
-import {IRecipe} from "../../../../models";
+import {IIngredient, IRecipe} from "../../../../models";
 import {RecipesService} from "../../services";
 
 @Component({
@@ -16,12 +17,28 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(value => {
-
-      if(history.state.data) this.recipe = history.state.data;
-
-      else this.recipesService.getRecipeById(value['id']).subscribe(({data}) => this.recipe = data.recipes[0]);
+      console.log(value);
+      this.recipesService.getRecipeById(value['id']).subscribe(({data}) => {
+        this.recipe = data.recipe;
+        this.recipe.ingredients.forEach(el => {
+         this._convertNumberToFraction(el);
+        })
+      });
     })
 
+  }
+
+  _convertNumberToFraction(item: IIngredient): void{
+    let nmb = number(item.quantity);
+    let frc = fraction(nmb);
+    let quotient  = 0;
+    let remainder = frc.n;
+
+    if(frc.n > frc.d) {
+      quotient = Math.floor(frc.n / frc.d);
+      remainder = frc.n % frc.d;
+    }
+   item.quantityDisplayValue = !!(item.quantity % 1) ? `${quotient > 0 ? `${quotient} ` : ""}${remainder }/${frc.d}` : item.quantity.toString();
   }
 
 }

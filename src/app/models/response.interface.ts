@@ -7,3 +7,11 @@ export interface IResponse {
     recipes: IRecipe[]
   }
 }
+
+export interface IRecipeResponse {
+  status: string,
+  results?: number,
+  data: {
+    recipe: IRecipe
+  }
+}
