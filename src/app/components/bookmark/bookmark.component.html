@@ -1,8 +1,8 @@
-<div class="bookmark-container">
+<a class="bookmark-container" [routerLink]="['/recipes', recipe.id]">
   <div>
     <img src="{{recipe.image_url}}" alt="{{recipe.title}}"/>
   </div>
   <div>
-    {{recipe.title}}
+      {{recipe.title}}
   </div>
-</div>
+</a>

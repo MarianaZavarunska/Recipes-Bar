@@ -5,6 +5,7 @@
   font-size: 1.3rem;
   letter-spacing: 1px;
   color: var(--primary-color);
+  text-decoration: none;
 }
 
 .bookmark-container > div:first-of-type{

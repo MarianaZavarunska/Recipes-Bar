@@ -1,10 +1,8 @@
-/*.recipe-details-container{*/
-/*  display:flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*  margin: 3rem 4rem;*/
-/*  !*background-color: var(--white-color);*!*/
-/*}*/
+.recipe-details-container{
+  border-right: 2px solid var(--primary-color);
+  padding-right: 1rem;
+  margin-top: 2rem;
+}
 
 .recipe-fig {
   height: 32rem;
