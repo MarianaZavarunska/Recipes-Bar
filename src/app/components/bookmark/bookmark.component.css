@@ -1,8 +1,8 @@
 .bookmark-container {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  font-size: 1.3rem;
+  gap: 1rem;
+  font-size: .9rem;
   letter-spacing: 1px;
   color: var(--primary-color);
   text-decoration: none;

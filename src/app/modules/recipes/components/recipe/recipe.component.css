@@ -34,3 +34,7 @@ div.recipe-container > div:last-of-type{
 a {
   text-decoration: none;
 }
+
+div.recipe-container > div:first-child{
+  height:270px;
+}
