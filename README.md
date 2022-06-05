@@ -20,6 +20,8 @@
  4) add to bookmarks
  5) go to source and check recipe direction
 
+3. Api Reference: https://forkify-api.herokuapp.com/v2
+
 
 
 
