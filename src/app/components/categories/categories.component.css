@@ -1,13 +1,13 @@
 .categories-container {
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .categories-btn {
   background-color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   color: var(--white-color);
   border: none;
   padding:  3px 5px;
