@@ -1,4 +1,28 @@
 # RecipesBar
+        DESCRIPTION
+
+1.First Page 
+ 1) create recipe;
+ 2) modal with forms;
+ 3) search by title;
+ 4) categories;
+ 5) pagination;
+ 6) switch theme;
+ 7) carousel;
+ 8) bookmarks(delete, add, goTo);
+ 9) icons;
+ 10) time;
+
+2.Second Page
+ 1) Styles;
+ 2) convert quantity of ingredients to Fraction;
+ 3) you can change servings and accordingly quantity of ingredients will be changed;
+ 4) add to bookmarks
+ 5) go to source and check recipe direction
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
@@ -25,3 +49,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
